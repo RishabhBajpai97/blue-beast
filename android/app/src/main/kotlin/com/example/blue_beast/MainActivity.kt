@@ -1,4 +1,4 @@
-package com.example.blue_beast
+package `in`.softpaper.softpaper
 
 import io.flutter.embedding.android.FlutterActivity
 
