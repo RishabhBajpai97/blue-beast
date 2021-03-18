@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:blue_beast/size_config.dart';
 import './screens/auth/auth.dart';
 import './screens/auth/otp.dart';
+import 'screens/profiles/teacher_profile.dart';
 
 // import './screens/auth/auth.dart';
 
@@ -27,10 +28,11 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
             ),
-            home: Auth(),
+            home: TeacherProfile(),
             routes: {
               '/otp-screen': (context) => OtpScreen(),
               '/dashboard': (context) => Dashboard(),
+              '/teacher-profile': (context) => TeacherProfile()
             },
           );
         },

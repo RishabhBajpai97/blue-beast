@@ -3,7 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Auth extends StatelessWidget {
+class Auth extends StatefulWidget {
+  @override
+  _AuthState createState() => _AuthState();
+}
+
+class _AuthState extends State<Auth> {
+  void _verifyNumber(BuildContext context) {
+    if (_formkey.currentState.validate()) {
+      otp = "1234";
+      Navigator.of(context).pushReplacementNamed(
+        '/otp-screen',
+        arguments: otp,
+      );
+    }
+    setState(() {
+      _tovalidate = true;
+    });
+  }
+
+  var otp = "";
+  var _phoneController = TextEditingController();
+  final _formkey = GlobalKey<FormState>();
+  var _tovalidate = false;
+
   @override
   build(BuildContext context) {
     return Scaffold(
@@ -54,7 +77,7 @@ class Auth extends StatelessWidget {
                           height: 20,
                         ),
                         Container(
-                          height: 84,
+                          height: 90,
                           width: 400,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -67,13 +90,33 @@ class Auth extends StatelessWidget {
                                   style: GoogleFonts.nunito(letterSpacing: 0.5),
                                 ),
                               ),
-                              TextField(
-                                textInputAction: TextInputAction.done,
-                                keyboardType: TextInputType.phone,
-                                decoration: InputDecoration(
-                                  contentPadding: EdgeInsets.only(left: 30),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Expanded(
+                                child: Form(
+                                  key: _formkey,
+                                  autovalidate: _tovalidate,
+                                  child: TextFormField(
+                                    validator: (value) {
+                                      if (value.isEmpty) {
+                                        return "Empty Number";
+                                      } else if (value.length < 10 ||
+                                          value.contains('a')) {
+                                        return "Inavlid Input";
+                                      }
+                                      return null;
+                                    },
+                                    keyboardAppearance: Brightness.dark,
+                                    controller: _phoneController,
+                                    textInputAction: TextInputAction.done,
+                                    keyboardType: TextInputType.number,
+                                    decoration: InputDecoration(
+                                      contentPadding: EdgeInsets.only(left: 30),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(30),
+                                      ),
+                                    ),
                                   ),
                                 ),
                               )
@@ -85,16 +128,18 @@ class Auth extends StatelessWidget {
                         ),
                         InkWell(
                           onTap: () {
-                            Navigator.of(context)
-                                .pushReplacementNamed('/otp-screen');
+                            _verifyNumber(context);
                           },
                           child: Container(
                             alignment: Alignment.center,
-                            child: Text("GET OTP",
-                                style: GoogleFonts.nunito(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 0.8)),
+                            child: Text(
+                              "GET OTP",
+                              style: GoogleFonts.nunito(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 0.8,
+                              ),
+                            ),
                             width: 134,
                             height: 52,
                             decoration: BoxDecoration(

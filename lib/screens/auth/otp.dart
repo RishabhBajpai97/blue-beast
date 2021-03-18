@@ -11,7 +11,6 @@ class OtpScreen extends StatefulWidget {
 
 class _OtpScreenState extends State<OtpScreen> {
   final TextEditingController _pinPutController = TextEditingController();
-
   BoxDecoration get _pinPutDecoration {
     return BoxDecoration(
       border: Border.all(color: Color(0xFFC9C9C9)),
@@ -21,6 +20,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final otp = ModalRoute.of(context).settings.arguments;
     return Scaffold(
         backgroundColor: Colors.white,
         body: Center(
@@ -101,6 +101,7 @@ class _OtpScreenState extends State<OtpScreen> {
                           ),
                           SizedBox(
                             height: 30,
+                            child: Text(otp),
                           ),
                           InkWell(
                             onTap: () {

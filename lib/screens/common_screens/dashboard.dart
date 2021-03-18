@@ -52,107 +52,122 @@ class Dashboard extends StatelessWidget {
           mainAxisSpacing: 10,
           crossAxisSpacing: 20,
           children: [
-            Container(
-              width: 200,
-              height: 200,
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        blurRadius: 19.0,
-                        offset: Offset(0, 4),
-                        color: Colors.black12)
-                  ],
-                  color: Color(0xFFAD00FF),
-                  borderRadius: BorderRadius.circular(5.0)),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 53.33,
-                    height: 60,
-                    child: Image.asset('assets/images/grid_placeholder.png'),
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  Text("Teacher Profile",
-                      style: GoogleFonts.nunito(
-                          letterSpacing: 0.5,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white))
-                ],
-              ),
-            ),
-            Container(
-              width: 200,
-              height: 200,
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        blurRadius: 19.0,
-                        offset: Offset(0, 4),
-                        color: Colors.black12)
-                  ],
-                  color: Color(0xFFFC9C00),
-                  borderRadius: BorderRadius.circular(5.0)),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 53.33,
-                    height: 60,
-                    child: Image.asset('assets/images/grid_placeholder.png'),
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  Text(
-                    "Attendance",
-                    style: GoogleFonts.nunito(
-                      letterSpacing: 0.5,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+            InkWell(
+              onTap: () {
+                Navigator.of(context).pushNamed('/teacher-profile');
+              },
+              child: Container(
+                width: 200,
+                height: 200,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          blurRadius: 19.0,
+                          offset: Offset(0, 4),
+                          color: Colors.black12)
+                    ],
+                    color: Color(0xFFAD00FF),
+                    borderRadius: BorderRadius.circular(5.0)),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 53.33,
+                      height: 60,
+                      child: Image.asset('assets/images/grid_placeholder.png'),
                     ),
-                  )
-                ],
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Text("Teacher Profile",
+                        style: GoogleFonts.nunito(
+                            letterSpacing: 0.5,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white))
+                  ],
+                ),
               ),
             ),
-            Container(
-              width: 200,
-              height: 200,
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 19.0,
-                      offset: Offset(0, 4),
-                      color: Colors.black12,
+            InkWell(
+              onTap: () {
+                Navigator.of(context).pushNamed('/teacher-profile');
+              },
+              child: Container(
+                width: 200,
+                height: 200,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          blurRadius: 19.0,
+                          offset: Offset(0, 4),
+                          color: Colors.black12)
+                    ],
+                    color: Color(0xFFFC9C00),
+                    borderRadius: BorderRadius.circular(5.0)),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 53.33,
+                      height: 60,
+                      child: Image.asset('assets/images/grid_placeholder.png'),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Text(
+                      "Attendance",
+                      style: GoogleFonts.nunito(
+                        letterSpacing: 0.5,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     )
                   ],
-                  color: Color(0xFF4ECDC4),
-                  borderRadius: BorderRadius.circular(5.0)),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 53.33,
-                    height: 60,
-                    child: Image.asset('assets/images/grid_placeholder.png'),
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  Text(
-                    "Teacher Profile",
-                    style: GoogleFonts.nunito(
-                      letterSpacing: 0.5,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.of(context).pushNamed('/teacher-profile');
+              },
+              child: Container(
+                width: 200,
+                height: 200,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 19.0,
+                        offset: Offset(0, 4),
+                        color: Colors.black12,
+                      )
+                    ],
+                    color: Color(0xFF4ECDC4),
+                    borderRadius: BorderRadius.circular(5.0)),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 53.33,
+                      height: 60,
+                      child: Image.asset('assets/images/grid_placeholder.png'),
                     ),
-                  )
-                ],
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Text(
+                      "Teacher Profile",
+                      style: GoogleFonts.nunito(
+                        letterSpacing: 0.5,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ],
